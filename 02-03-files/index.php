@@ -1,7 +1,7 @@
 <?php
   function pretty_print( $output ) {
     echo '<pre>';
-    var_dump( $output );
+    print_r( $output );
     echo '</pre>';
   }
 ?>
@@ -14,11 +14,19 @@
     <body>
 		<main>
 			<?php
-			$api_key = 'f5d36126-807a-4f25-88af-bf5b029fe1b4';
-			$api_callback = 'https://dictionaryapi.com/api/v3/references/collegiate/json/test?key=';
-			$xkcd = json_decode( file_get_contents('https://xkcd.com/info.0.json') );
+				$api_key = 'f5d36126-807a-4f25-88af-bf5b029fe1b4';
+				$api_callback = 'https://dictionaryapi.com/api/v3/references/collegiate/json/';
+				
+				$lookup = $api_callback . 'capricious' . '?key=' . $api_key;
+				$word = json_decode( file_get_contents( $lookup ) );
+
 			?>
+      <dl>
+        <dt><?php echo $word[0]->meta->id; ?> (<?php echo $word[0]->fl; ?>):</dt>
+        <dd><?php echo $word[0]->shortdef[0]; ?></dd>
+      </dl>
 		</main>
+      <?php pretty_print( $word ); ?>
 		<style>
 			body {
 				background: #edf2f8;
