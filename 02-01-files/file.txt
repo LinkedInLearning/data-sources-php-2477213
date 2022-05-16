@@ -1,0 +1,14 @@
+I’m Writing in Ulysses Again
+Back in January, I asked, Is it time for me to ditch Ulysses (https://casabona.org/2022/01/is-it-time-for-me-to-ditch-ulysses/), citing syncing issues and the want to consolidate all of my writing/researching/note-taking apps into one[1]. 
+Well, I’m happy to say that after 4 months of trying Craft for all of my writing, I’m back on Ulysses. There were a few reasons why I deeply missed writing here ( I’m currently writing this post in Ulysses). 
+
+The first is the ability to deeply customize the writing experience. I love that I can choose the color schemes and fonts. Ulysses is also the only app I’ve used that gets paragraph spacing just right….and I love writing using Hoefler Text (https://www.typography.com/fonts/hoefler-text/overview). 
+Craft is really limited in this area. Yes, there is some customization, but I can’t even set universal settings for Workspaces, so all of my documents start as one style (the one I prefer for note-taking), and I have set the style I like for writing per document. 
+Next is the tight integration with WordPress[2]. I can easily publish to all of my WordPress sites directly from Ulysses. While Craft kind of has this functionality through Craft X, it’s clunky and I don’t really trust it with my credentials, so I would copy the markdown and move it to the block editor, which was not great. 
+Finally, easy footnotes. I actually can’t believe how much I missed this, but I found myself doing a lot more parenthetical writing because I couldn’t easily insert footnotes in Craft. It’s really nice to have this functionality back. 
+I’ve been saying “Content creation is experimentation” a lot lately, and that’s true with it comes to the type of content, as well as workflows. It’s easy to get lost in the weeds of tools and shiny object syndrome, but if there’s a legitimate improvement you can make to your process, you should make it. 
+Similarly, if the change isn’t working, it’s OK to go back to the old way. 
+
+[1]: That one being Craft, which I use for everything else.
+
+[2]:  Now with REST API support (https://ulysses.app/releases/)! 
