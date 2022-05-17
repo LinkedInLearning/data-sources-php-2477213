@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Reading from Protected API | Using Data Sources in PHP</title>
+        <title>Processing an RSS Feed | Using Data Sources in PHP</title>
         <meta name="author" value="Joe Casabona" />
     </head>
     <body>

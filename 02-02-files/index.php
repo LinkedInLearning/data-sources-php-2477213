@@ -1,7 +1,7 @@
 <?php
   function pretty_print( $output ) {
     echo '<pre>';
-    var_dump( $output );
+    print_r( $output );
     echo '</pre>';
   }
 ?>

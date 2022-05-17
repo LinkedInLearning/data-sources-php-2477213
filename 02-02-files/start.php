@@ -1,3 +1,10 @@
+<?php
+  function pretty_print( $output ) {
+    echo '<pre>';
+    print_r( $output );
+    echo '</pre>';
+  }
+?>
 <!DOCTYPE html>
 <html>
     <head>
