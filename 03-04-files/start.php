@@ -8,12 +8,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Connecting to ODBC | Using Data Sources in PHP</title>
+        <title>Connecting to a MySQL Database | Using Data Sources in PHP</title>
         <meta name="author" value="Joe Casabona" />
     </head>
     <body>
 		<main>
+		<?php
+			$db_host = 'localhost';
+			$db_user = 'root';
+			$db_password = 'root';
+			$db_db = 'conference';
 			
+			$mysqli = @new mysqli(
+				$db_host,
+				$db_user,
+				$db_password,
+				$db_db
+			);
+		?>
 		</main>
 		<style>
 			body {

@@ -8,19 +8,34 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Connecting to ODBC  | Using Data Sources in PHP</title>
+        <title>Connecting to a MySQL Database  | Using Data Sources in PHP</title>
         <meta name="author" value="Joe Casabona" />
     </head>
     <body>
 		<main>
+			<h1>Conference Speakers</h1>
 			<?php
-				// Microsoft Excel
-				$file = 'speakers.xlsx';
-				$dir = dirname($file);
-				$odbc = odbc_connect("Driver={Microsoft Excel Driver (*.xls)};DriverId=790;Dbq=$file;DefaultDir=$dir" , '', '');
+				$db_host = 'localhost';
+				$db_user = 'root';
+				$db_password = 'root';
+				$db_db = 'conference';
+				
+				$mysqli = @new mysqli(
+					$db_host,
+					$db_user,
+					$db_password,
+					$db_db
+				);
 
-				$rows = odbc_exec($odbc, "SELECT * FROM Sheet");
-				pretty_print( $rows );
+			
+				$query = "INSERT INTO speakers VALUES (NULL, 'Joe Casabona', 'Programmer', 'Good House Media, LLC', 'Joe started his career almost 20 years ago as a freelance web developer before realizing his true passion, which is sharing his years of knowledge about website development, podcasting and course creator to help creators, freelancers, and business owners.', 'How to Connect to a Database', 'Get live coding experience in this session, where you\'ll learn how to use PHP to connect to a live database!', 'Tech')";
+
+				if ($mysqli->query( $query ) === TRUE) {
+					echo "New record created successfully";
+				} else {
+					echo "Error: " . $mysqli->error;
+				}
+				
 			?>
 		</main>
 		<style>

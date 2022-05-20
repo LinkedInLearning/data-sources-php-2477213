@@ -20,7 +20,7 @@
 				$db_password = 'root';
 				$db_db = 'conference';
 				
-				$mysqli = @new mysqli(
+				$mysqli = new mysqli(
 				$db_host,
 				$db_user,
 				$db_password,
@@ -46,15 +46,6 @@
 						$Category_Track
 					);
 				}
-
-				$query = "INSERT INTO speakers VALUES (NULL, 'Erin Casabona', 'Programmer', 'Good House Media, LLC', 'Joe started his career almost 20 years ago as a freelance web developer before realizing his true passion, which is sharing his years of knowledge about website development, podcasting and course creator to help creators, freelancers, and business owners.', 'How to Connect to a Database', 'Get live coding experience in this session, where you\'ll learn how to use PHP to connect to a live database!', 'Tech')";
-
-				if ($mysqli->query( $query ) === TRUE) {
-					echo "New record created successfully";
-				} else {
-					echo "Error: " . $mysqli->error;
-				}
-				
 			?>
 		</main>
 		<style>
