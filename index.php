@@ -5,7 +5,7 @@
     echo '</pre>';
   }
 
-  $api_key = 'f5d36126-807a-4f25-88af-bf5b029fe1b4'; // CHANGE TO YOUR API KEY
+  $api_key = 'YOUR-API-KEY'; // CHANGE TO YOUR API KEY
 ?>
 <!DOCTYPE html>
 <html>
