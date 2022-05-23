@@ -26,6 +26,22 @@
 					$pass,
 					$db
 				);
+
+				$name = 'Joe Casabona';
+				$title = 'Programmer';
+				$org = 'LinkedIn Learning';
+				$bio = 'Joe has been writing PHP code for over 20 years!';
+				$session_name = 'How to Connect to a Database';
+				$session_desc = 'In this live coding session you\\\'ll get hands-on experience for connecting to a database with PHP';
+				$track = 'Tech';
+
+				$query = "INSERT INTO speakers VALUES(NULL, '$name', '$title', '$org', '$bio', '$session_name', '$session_desc', '$track')";
+
+				if ( $mysqli->query( $query ) === TRUE ) {
+					echo '<p>New record added successfully!</p>';
+				} else {
+					echo '<p>Error: ' . $mysqli->error . '</p>';
+				}
 			?>
 		</main>
 		<style>
