@@ -4,6 +4,31 @@
     print_r( $output );
     echo '</pre>';
   }
+
+  function get_random_img( $num = null ) {
+	  $api = 'https://pixelford.com/api/image/id/';
+	  $num = ( ! is_null( $num ) ) ? $num : random_int(1,100);
+	  
+	  return json_decode( file_get_contents( $api . $num ) );
+  }
+
+  function get_search_results( $term ) {
+	$api = 'https://pixelford.com/api/image/search/';
+	return json_decode( file_get_contents( $api . $term ) );
+  }
+
+  function print_img( $img ) {
+	  $format = '<figure>
+	  	<img src="%1$s" alt="%2$s">
+		<figcaption>%3$s</figcaption>
+		</figure>';
+
+		printf( $format, 
+			$img->url_full_size, 
+			$img->description,
+			$img->title
+  		);
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,10 +38,26 @@
     </head>
     <body>
 		<main>
+  			<h1>Random Image</h1>
 			<?php
-				$result = json_decode( file_get_contents( 'https://pixelford.com/api/image/id/32' ) );
-				pretty_print( $result );
-			?>
+				$img = get_random_img();
+				print_img( $img[0] ); 
+  			?>
+			<div>
+  				<h2>Search</h2>
+				  <form name="search" method="get">
+					  <input type="text" name="term" />
+				  </form>
+				  <?php
+				  	if( isset( $_GET['term'] ) ) {
+						  $results = get_search_results( $_GET['term'] );
+						  echo '<h3>Search results for '. $_GET['term'] .'</h3>';
+						  foreach( $results as $img ) {
+							  print_img( $img );
+						  }
+					  }
+				?>
+			</div>
 		</main>
 		<style>
 			body {
