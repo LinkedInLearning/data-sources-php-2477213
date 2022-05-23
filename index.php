@@ -28,5 +28,14 @@
 				margin: 0 auto;
 				width: 800px;
 			}
+
+			article {
+				border: 1px solid #CFCFCF;
+				box-shadow: 0 0 5px rgba(0,0,0,0.25);
+				padding: 15px;
+				margin: 15px auto;
+				max-width: 90%;
+			}
+		</style>
     </body>
 </html>
