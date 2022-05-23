@@ -13,7 +13,35 @@
     </head>
     <body>
 		<main>
-			
+			<?php
+				$feed = 'https://casabona.org/feed/';
+				if( isset( $_GET['page'] ) ) {
+					$page = $_GET['page']; 
+					$feed .= '?paged=' . $page;
+				} else{
+					$page = 1;
+				}
+
+				$content = new SimpleXmlElement( file_get_contents( $feed ) );
+			?>
+			<h1><a href="<?php echo $content->channel->link; ?>"><?php echo $content->channel->title; ?></a></h1>
+  			<?php
+				$format = '<article>
+					<h2><a href="%1$s">%2$s</a></h2>
+					%3$s
+					<footer>Published on %4$s <a href="%1$s">View Original</a></footer>
+					</article>';
+
+				foreach( $content->channel->item as $item ) {
+					printf( $format, 
+						$item->link,
+						$item->title,
+						$item->description,
+						$item->pubDate
+					);
+				}
+			?>
+			<p><a href="?page=<?php echo $page+1; ?>">Next Page</a></p>
 		</main>
 		<style>
 			body {
