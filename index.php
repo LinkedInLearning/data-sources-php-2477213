@@ -6,10 +6,27 @@
     </head>
     <body>
 		<main>
-			
+			<h1>Reading from Files</h1>
+			<?php 
+				//echo file_get_contents('02_01.txt'); 
+				
+				foreach( file('02_01.txt') as $line => $text )	{
+					if( strlen( trim($text) ) > 0 ) {
+						echo "<p>#$line: $text</p>";
+					}
+				}
+			?>
+			<hr/>
+			<?php
+				$fp = fopen( '02_01.txt', 'r' );
+				if ( $fp ) {
+					while( ($buffer = fgets($fp)) !== false ) {
+						echo "<p>$buffer</p>";
+					}
+				}
+				fclose($fp);
+			?>
 		</main>
-
-
 		<style>
 			body {
 				background: #edf2f8;
